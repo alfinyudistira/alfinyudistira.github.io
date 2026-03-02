@@ -497,6 +497,21 @@
         .back-to-top:hover {
             background: var(--neon); color: #000; opacity: 1; transform: translateY(-3px);
         }
+                /* GAMBAR PROJECT */
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border);
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        
+        .project-card:hover .project-img {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
 
     </style>
 </head>
@@ -877,6 +892,8 @@
         <div class="project-grid">
 
             <div class="project-card reveal">
+                <div class="project-card reveal">
+    <img src="project-01.png" alt="Recruitment Dashboard" class="project-img">
                 <div class="project-num">PROJECT 01</div>
                 <div class="project-header">
                     <span class="p-title">Optimalisasi Rekrutmen & Akuisisi Bakat</span>
