@@ -4,145 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alfin Maulana | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* --- CSS RAHASIA BIAR MIRIP NEON MINT & YUJI --- */
-        
-        /* 1. Reset & Font Modern */
+        /* --- 1. SETUP DASAR (RESET) --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: #0a0a0a; /* Hitam Pekat ala NeonMint */
-            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            background-color: #050505; /* Hitam Pekat */
+            color: #d4d4d4;
             line-height: 1.6;
-            overflow-x: hidden;
         }
-
-        /* 2. Aksen Warna (Hijau Neon & Ungu) */
+        
+        /* WARNA AKSEN (Ganti di sini kalau mau ubah warna) */
         :root {
-            --neon-mint: #00ffa3; /* Warna Hijau NeonMint */
-            --dark-card: #111111;
-            --border-glow: rgba(0, 255, 163, 0.3);
+            --neon: #00ffa3; /* Hijau NeonMint */
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: #333;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
-        /* 3. Header dengan Efek Gradasi Halus */
+        /* --- 2. HEADER HERO SECTION --- */
         header {
-            padding: 80px 20px;
-            text-align: left; /* Gaya Yuji Sato rata kiri */
-            border-bottom: 1px solid #333;
-            background: radial-gradient(circle at top right, rgba(138, 43, 226, 0.1), transparent 40%); /* Sedikit ungu samar */
+            padding: 100px 0 60px;
+            border-bottom: 1px solid #222;
+        }
+        
+        .profile-pic {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            border: 2px solid var(--neon);
+            object-fit: cover;
+            margin-bottom: 20px;
         }
 
-        .intro-tag {
-            color: var(--neon-mint);
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 15px;
-            line-height: 1.1;
-        }
-
-        h1 span { color: #888; } /* Warna abu untuk nama belakang */
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #aaa;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        /* Tombol Keren ala Neon */
+        h1 { font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 10px; letter-spacing: -1px; }
+        h1 span { color: #555; }
+        
+        .subtitle { font-size: 1.1rem; color: #888; max-width: 600px; margin-bottom: 30px; }
+        
         .btn-neon {
             display: inline-block;
-            background: transparent;
-            color: var(--neon-mint);
-            border: 1px solid var(--neon-mint);
             padding: 12px 30px;
+            background: var(--neon);
+            color: #000;
             font-weight: bold;
             text-decoration: none;
-            transition: 0.3s;
             border-radius: 4px;
+            transition: 0.3s;
         }
-        .btn-neon:hover {
-            background: var(--neon-mint);
-            color: #000;
-            box-shadow: 0 0 20px rgba(0, 255, 163, 0.5); /* Efek cahaya pas disentuh */
-        }
+        .btn-neon:hover { box-shadow: 0 0 20px rgba(0, 255, 163, 0.6); transform: translateY(-2px); }
 
-        /* 4. Grid Project Modern */
+        /* JUDUL SECTION */
         .section-title {
-            margin-top: 60px;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-            border-left: 4px solid var(--neon-mint);
-            padding-left: 15px;
+            font-size: 1.5rem;
             color: #fff;
+            margin: 80px 0 40px;
+            display: flex;
+            align-items: center;
+        }
+        .section-title::before {
+            content: ""; display: inline-block; width: 8px; height: 8px;
+            background: var(--neon); margin-right: 15px; border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon);
         }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        /* --- 3. WORK EXPERIENCE (TIMELINE ALA NEONMINT) --- */
+        .timeline {
+            position: relative;
+            border-left: 2px solid #222;
+            margin-left: 10px;
+            padding-left: 30px;
         }
-
-        /* Kartu Project - Gabungan gaya minimalis & dark */
-        .card {
-            background: var(--dark-card);
-            border: 1px solid #222;
-            padding: 25px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+        
+        .timeline-item {
+            margin-bottom: 40px;
             position: relative;
         }
-
-        .card:hover {
-            border-color: var(--neon-mint);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .card h3 { color: #fff; margin-bottom: 10px; font-size: 1.3rem; }
         
-        /* Badge Skill (Biar kayak template Yuji) */
-        .tech-stack { margin-bottom: 15px; }
-        .tech-badge {
-            font-size: 0.75rem;
-            background: #222;
-            color: #aaa;
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-right: 5px;
-            border: 1px solid #333;
+        /* Titik Hijau di Garis */
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -36px; top: 5px;
+            width: 14px; height: 14px;
+            background: #000;
+            border: 2px solid var(--neon);
+            border-radius: 50%;
         }
 
-        .card p { font-size: 0.95rem; color: #888; margin-bottom: 20px; }
+        .job-title { font-size: 1.2rem; color: #fff; font-weight: 600; }
+        .company { color: var(--neon); font-size: 0.9rem; margin-bottom: 5px; font-weight: bold; }
+        .date { font-size: 0.85rem; color: #666; margin-bottom: 10px; font-style: italic; }
+        .job-desc { font-size: 0.95rem; color: #aaa; }
 
-        .card-link {
-            color: #fff;
-            text-decoration: none;
+        /* --- 4. EXPERTISE / CERTIFICATES (GRID ALA YUJI) --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsif HP/Laptop */
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: var(--glass);
+            border: 1px solid #222;
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+        .cert-card:hover { border-color: var(--neon); transform: translateY(-5px); }
+        
+        .cert-category { font-size: 1.1rem; color: #fff; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        
+        .cert-list { list-style: none; }
+        .cert-list li {
+            margin-bottom: 8px;
             font-size: 0.9rem;
-            border-bottom: 1px dotted var(--neon-mint);
-            padding-bottom: 2px;
+            color: #bbb;
+            display: flex;
+            align-items: start;
         }
-        .card-link:hover { color: var(--neon-mint); border-bottom-style: solid; }
-
-        footer { text-align: center; margin-top: 80px; padding: 40px; color: #555; font-size: 0.9rem; border-top: 1px solid #222; }
-
-        /* Tampilan HP */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            header { padding: 40px 20px; }
+        .cert-list li::before {
+            content: "✓"; 
+            color: var(--neon); 
+            margin-right: 10px;
+            font-weight: bold;
         }
+
+        /* --- 5. PROJECTS (SIMULASI PULSE DIGITAL) --- */
+        .project-card {
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .project-header {
+            background: linear-gradient(90deg, #111, #000);
+            padding: 15px 20px;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .project-body { padding: 20px; }
+        .badge { background: #222; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; border: 1px solid #444; }
+
+        footer { text-align: center; margin-top: 100px; padding: 40px; border-top: 1px solid #222; color: #444; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -150,68 +158,129 @@
     <div class="container">
         
         <header>
-            <div class="intro-tag">Hello, World! I am</div>
+            <img src="https://ui-avatars.com/api/?name=Alfin+Maulana&background=00ffa3&color=000&size=200" alt="Alfin" class="profile-pic">
             <h1>Alfin Maulana <span>Yudistira</span></h1>
-            <p class="subtitle">
-                Industrial Engineering Student turned <strong>Data Analyst</strong> & <strong>Cybersecurity Specialist</strong>. 
-                Creating secure and data-driven solutions for "Pulse Digital".
-            </p>
-            <a href="https://linkedin.com/in/alfinmaulanayudistira" class="btn-neon">Connect on LinkedIn</a>
+            <p class="subtitle">Industrial Engineering Student | Security Professional | Transforming into <strong>Data & Cybersecurity Specialist</strong>.</p>
+            <a href="https://linkedin.com/in/alfinmaulanayudistira" class="btn-neon">Hubungi Saya (LinkedIn)</a>
         </header>
 
-        <h2 class="section-title">Featured Projects</h2>
-
-        <div class="project-grid">
-
-            <div class="card">
-                <div class="tech-stack">
-                    <span class="tech-badge">SQL</span>
-                    <span class="tech-badge">Tableau</span>
-                    <span class="tech-badge">R Studio</span>
-                </div>
-                <h3>Optimasi HR Analytics</h3>
-                <p>Menganalisis data karyawan Pulse Digital untuk mengurangi turnover rate sebesar 15% melalui identifikasi faktor lembur berlebih.</p>
-                <a href="#" class="card-link">View Documentation &rarr;</a>
+        <h2 class="section-title">Experience Journey</h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="job-title">Security Officer</div>
+                <div class="company">Universitas Muhammadiyah Gresik (PT Konsulta)</div>
+                <div class="date">Dec 2024 - Present</div>
+                <p class="job-desc">Menjaga keamanan aset universitas, kontrol akses CCTV, dan manajemen insiden darurat.</p>
             </div>
 
-            <div class="card">
-                <div class="tech-stack">
-                    <span class="tech-badge">Linux</span>
-                    <span class="tech-badge">SIEM</span>
-                    <span class="tech-badge">Firewall</span>
-                </div>
-                <h3>Audit Keamanan Jaringan</h3>
-                <p>Melakukan Vulnerability Assessment dan mitigasi serangan brute-force pada server simulasi kantor.</p>
-                <a href="#" class="card-link">View Documentation &rarr;</a>
+            <div class="timeline-item">
+                <div class="job-title">Cafe Staff</div>
+                <div class="company">Cafe Giras 26</div>
+                <div class="date">Jul 2024 - Sep 2024</div>
+                <p class="job-desc">Manajemen inventaris stok dan pelayanan pelanggan (Customer Service).</p>
             </div>
 
-            <div class="card">
-                <div class="tech-stack">
-                    <span class="tech-badge">Six Sigma</span>
-                    <span class="tech-badge">Python</span>
-                </div>
-                <h3>Efisiensi Produksi (DMAIC)</h3>
-                <p>Mengurangi produk cacat (defect) dengan metode Six Sigma dan analisis statistik menggunakan Python.</p>
-                <a href="#" class="card-link">View Documentation &rarr;</a>
+            <div class="timeline-item">
+                <div class="job-title">Production Operator</div>
+                <div class="company">PT. Harvestar Flour Mills</div>
+                <div class="date">Jan 2024 - Feb 2024</div>
+                <p class="job-desc">Mengoperasikan mesin packaging dan menjaga kualitas produksi sesuai standar pabrik.</p>
             </div>
 
-            <div class="card">
-                <div class="tech-stack">
-                    <span class="tech-badge">Google Colab</span>
-                    <span class="tech-badge">Machine Learning</span>
+        </div>
+
+        <h2 class="section-title">Professional Certifications</h2>
+        <div class="grid-container">
+
+            <div class="cert-card">
+                <div class="cert-category">🛡️ Cybersecurity & Network</div>
+                <ul class="cert-list">
+                    <li>CompTIA Cybersecurity Analyst (CySA+) [Pearson]</li>
+                    <li>Google Cybersecurity Professional [Google]</li>
+                    <li>Network Security & Firewall [Google]</li>
+                </ul>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-category">📊 Data Intelligence & BI</div>
+                <ul class="cert-list">
+                    <li>Google Advanced Data Analytics</li>
+                    <li>Google Business Intelligence</li>
+                    <li>Data Analysis with Microsoft Excel</li>
+                </ul>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-category">⚙️ Engineering & Safety</div>
+                <ul class="cert-list">
+                    <li>Chemical Hazards & Process Safety [UC Davis]</li>
+                    <li>Gada Pratama (Polri License)</li>
+                    <li>Six Sigma Black Belt [Kennesaw State]</li>
+                    <li>Six Sigma Green Belt [Kennesaw State]</li>
+                </ul>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-category">🚀 Business & HR</div>
+                <ul class="cert-list">
+                    <li>Google Project Management</li>
+                    <li>Project Management & Planning [JHU]</li>
+                    <li>HR Management & Leadership [Macquarie]</li>
+                    <li>HRCI Human Resource Associate</li>
+                    <li>Digital Marketing Dasar [Kemnaker]</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <h2 class="section-title">Selected Projects (Pulse Digital)</h2>
+        <div class="grid-container">
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <span style="color:#fff; font-weight:bold;">HR Analytics Dashboard</span>
+                    <span class="badge">Tableau</span>
                 </div>
-                <h3>Prediksi Maintenance Mesin</h3>
-                <p>Membuat model prediksi kapan mesin pabrik akan rusak agar tim teknisi bisa servis lebih awal.</p>
-                <a href="#" class="card-link">View Documentation &rarr;</a>
+                <div class="project-body">
+                    <p style="color:#aaa; font-size:0.9rem; margin-bottom:15px;">
+                        Menganalisis data karyawan untuk mengurangi turnover rate hingga 15% dengan mengidentifikasi pola jam lembur.
+                    </p>
+                    <a href="#" style="color:var(--neon); text-decoration:none; font-size:0.9rem;">Lihat PDF Project &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span style="color:#fff; font-weight:bold;">Vulnerability Assessment</span>
+                    <span class="badge">Linux / SIEM</span>
+                </div>
+                <div class="project-body">
+                    <p style="color:#aaa; font-size:0.9rem; margin-bottom:15px;">
+                        Melakukan simulasi penetrasi jaringan dan konfigurasi firewall untuk mencegah serangan brute-force.
+                    </p>
+                    <a href="#" style="color:var(--neon); text-decoration:none; font-size:0.9rem;">Lihat PDF Project &rarr;</a>
+                </div>
+            </div>
+             <div class="project-card">
+                <div class="project-header">
+                    <span style="color:#fff; font-weight:bold;">Production Efficiency (Six Sigma)</span>
+                    <span class="badge">DMAIC</span>
+                </div>
+                <div class="project-body">
+                    <p style="color:#aaa; font-size:0.9rem; margin-bottom:15px;">
+                        Menggunakan metode DMAIC untuk mengurangi cacat produksi dan meningkatkan efisiensi operasional pabrik.
+                    </p>
+                    <a href="#" style="color:var(--neon); text-decoration:none; font-size:0.9rem;">Lihat PDF Project &rarr;</a>
+                </div>
             </div>
 
         </div>
 
         <footer>
-            <p>&copy; 2026 Alfin Maulana. Inspired by NeonMint & Yuji Sato.</p>
+            &copy; 2026 Alfin Maulana Yudistira.<br>Built with Neon Style.
         </footer>
 
     </div>
-
 </body>
 </html>
