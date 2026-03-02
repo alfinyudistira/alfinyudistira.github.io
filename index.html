@@ -378,6 +378,76 @@
         }
         .btn-link:hover { border-color: var(--neon); color: var(--neon); }
 
+                /* ── SERVICES ── */
+        #services { background: var(--bg); }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 8px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Efek Hover Neon */
+        .service-card:hover {
+            border-color: var(--neon);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 163, 0.05);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--neon);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .service-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-list li {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .service-list li::before {
+            content: '>';
+            color: var(--neon);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        
         /* ── FOOTER ── */
         footer {
             text-align: center; padding: 40px 20px;
@@ -411,6 +481,7 @@
     <div class="nav-links">
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
+        <a href="#services">Services</a>
         <a href="#skills">Skills</a>
         <a href="#certifications">Certs</a>
         <a href="#projects">Projects</a>
@@ -514,8 +585,60 @@
         </div>
     </section>
 
+    <section id="services">
+        <div class="section-label">// 03 — SERVICES</div>
+        <div class="section-heading">What I Deliver</div>
+        
+        <div class="services-grid">
+            
+            <div class="service-card reveal">
+                <div class="service-icon">📊</div>
+                <div class="service-title">Data Intelligence & BI</div>
+                <p class="service-desc">
+                    Mengubah data mentah perusahaan menjadi dashboard visual yang bisa ditindaklanjuti untuk keputusan strategis.
+                </p>
+                <ul class="service-list">
+                    <li>Power BI & Tableau Dashboards</li>
+                    <li>HR Analytics & Retention Models</li>
+                    <li>Predictive Maintenance Prediction</li>
+                    <li>Automated Reporting Pipelines</li>
+                </ul>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-icon">🛡️</div>
+                <div class="service-title">Industrial Cybersecurity</div>
+                <p class="service-desc">
+                    Mengamankan infrastruktur fisik dan digital dari ancaman, mulai dari akses pintu hingga database SQL.
+                </p>
+                <ul class="service-list">
+                    <li>Vulnerability Assessment (VAPT)</li>
+                    <li>CCTV & Physical Access Control</li>
+                    <li>SQL Injection Mitigation</li>
+                    <li>Incident Response Planning</li>
+                </ul>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-icon">⚙️</div>
+                <div class="service-title">Process Safety & Ops</div>
+                <p class="service-desc">
+                    Optimasi alur kerja industri untuk efisiensi maksimal dengan standar keselamatan internasional (K3).
+                </p>
+                <ul class="service-list">
+                    <li>Six Sigma Process Improvement</li>
+                    <li>COSHH Chemical Safety Audits</li>
+                    <li>Hazard Risk Assessment (HIRA)</li>
+                    <li>Operational Workflow Design</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+
     <section id="skills">
-        <div class="section-label">// 03 — SKILLS</div>
+        <div class="section-label">// 04 — SKILLS</div>
         <div class="section-heading">Technical Expertise</div>
         <div class="skills-grid">
             <div class="skill-group reveal">
@@ -581,7 +704,7 @@
     </section>
 
     <section id="certifications">
-        <div class="section-label">// 04 — CERTIFICATIONS</div>
+        <div class="section-label">// 05 — CERTIFICATIONS</div>
         <div class="section-heading">Professional Credentials</div>
         <div class="cert-grid">
             <div class="cert-item reveal"><div class="cert-icon">G</div><div><div class="cert-name">Google Advanced Data Analytics</div><div class="cert-issuer">Google</div></div></div>
@@ -603,7 +726,7 @@
     </section>
 
     <section id="projects">
-        <div class="section-label">// 05 — PROJECTS</div>
+        <div class="section-label">// 06 — PROJECTS</div>
         <div class="section-heading">Enterprise Project Portfolio</div>
         <div class="project-grid">
 
