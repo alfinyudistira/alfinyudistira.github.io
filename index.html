@@ -498,19 +498,16 @@
             background: var(--neon); color: #000; opacity: 1; transform: translateY(-3px);
         }
                 /* GAMBAR PROJECT */
-        .project-img {
+                .project-img {
             width: 100%;
-            height: 200px;
+            aspect-ratio: 16/9; /* Rasio layar bioskop/laptop */
             object-fit: cover;
+            object-position: top; /* Fokus ke bagian atas gambar (Judul) */
             border-bottom: 1px solid var(--border);
             opacity: 0.8;
             transition: 0.3s;
         }
-        
-        .project-card:hover .project-img {
-            opacity: 1;
-            transform: scale(1.02);
-        }
+
 
 
     </style>
