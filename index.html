@@ -5,48 +5,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Alfin Maulana</title>
     <style>
-        /* INI BAGIAN DESAIN (CSS) - Biar rapi */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; text-align: center; }
-        .intro { text-align: center; margin-bottom: 40px; }
-        .btn { display: inline-block; background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        /* RESET & DASAR */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f172a; /* Warna Gelap Premium */
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* CONTAINER UTAMA */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* HEADER PROFIL */
+        header {
+            text-align: center;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #334155;
+            margin-bottom: 50px;
+        }
         
-        /* Kartu Project */
-        .project-card { border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 8px; border-left: 5px solid #28a745; }
-        .project-title { font-size: 1.2em; font-weight: bold; color: #333; }
-        .project-tech { color: #666; font-size: 0.9em; font-style: italic; margin-bottom: 10px; }
+        /* FOTO PROFIL (Bisa diganti nanti) */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            margin-bottom: 20px;
+            object-fit: cover;
+            border: 4px solid #1e293b;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); /* Efek cahaya biru */
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; }
+        .subtitle { font-size: 1.2rem; color: #94a3b8; margin-bottom: 20px; }
+        
+        .tag {
+            display: inline-block;
+            background: #1e293b;
+            color: #38bdf8;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0 5px;
+            border: 1px solid #334155;
+        }
+
+        /* TOMBOL LINKEDIN */
+        .btn-main {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4); }
+
+        /* GRID PROJECT */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Otomatis rapi di HP & Laptop */
+            gap: 25px;
+        }
+
+        /* KARTU PROJECT */
+        .card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .card h3 { color: #fff; margin-bottom: 10px; font-size: 1.4rem; }
+        .card-tech { color: #38bdf8; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        .card p { color: #cbd5e1; font-size: 0.95rem; margin-bottom: 20px; }
+        
+        .btn-project {
+            display: block;
+            text-align: center;
+            background: transparent;
+            border: 1px solid #3b82f6;
+            color: #3b82f6;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-project:hover { background: #3b82f6; color: white; }
+
+        /* FOOTER */
+        footer { text-align: center; margin-top: 80px; color: #64748b; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="intro">
+        
+        <header>
+            <img src="https://ui-avatars.com/api/?name=Alfin+Maulana&background=0D8ABC&color=fff&size=200" alt="Foto Alfin" class="profile-img">
+            
             <h1>Alfin Maulana Yudistira</h1>
-            <p>Industrial Engineering Student | Data Analytics | Cybersecurity Enthusiast</p>
-            <p>Selamat datang di simulasi project "Pulse Digital". Di sini saya mendemonstrasikan 14 skill teknis saya.</p>
-            <a href="https://linkedin.com/in/alfinmaulanayudistira" class="btn">Hubungi Saya di LinkedIn</a>
-        </div>
+            <div class="subtitle">Industrial Engineering • Data Analytics • Cybersecurity</div>
+            
+            <div style="margin-top: 15px;">
+                <span class="tag">🛡️ Network Security</span>
+                <span class="tag">📊 Data Visualization</span>
+                <span class="tag">⚙️ Process Optimization</span>
+            </div>
 
-        <hr>
+            <p style="margin-top: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Selamat datang di showcase portofolio saya. Di sini saya mendemonstrasikan 14 project teknis yang disimulasikan melalui perusahaan fiktif <strong>"Pulse Digital"</strong>.
+            </p>
 
-        <h2>Daftar Proyek</h2>
+            <a href="https://linkedin.com/in/alfinmaulanayudistira" class="btn-main">Hubungi Saya di LinkedIn</a>
+        </header>
 
-        <div class="project-card">
-            <div class="project-title">1. Optimasi HR Analytics (Pulse Digital)</div>
-            <div class="project-tech">Tools: SQL, Tableau, R | Sertifikat: Google Data Analytics</div>
-            <p><strong>Masalah:</strong> Perusahaan mengalami turnover karyawan tinggi (15%).</p>
-            <p><strong>Solusi:</strong> Saya melakukan cleaning data karyawan dengan SQL dan visualisasi trend resign menggunakan Tableau.</p>
-            <p><strong>Hasil:</strong> Menemukan bahwa jam lembur adalah penyebab utama.</p>
-            <a href="LINK_GOOGLE_DRIVE_PROJECT_1_DISINI" target="_blank">Lihat Detail Project & Sertifikat 👉</a>
-        </div>
-        <div class="project-card">
-            <div class="project-title">2. Audit Keamanan Jaringan</div>
-            <div class="project-tech">Tools: Linux, SIEM | Sertifikat: Google Cybersecurity</div>
-            <p><strong>Masalah:</strong> Simulasi serangan brute-force pada server kantor.</p>
-            <p><strong>Solusi:</strong> Mengkonfigurasi firewall dan monitoring traffic menggunakan SIEM tools.</p>
-            <a href="#" target="_blank">Lihat Detail Project & Sertifikat 👉</a>
-        </div>
+        <h2 style="margin-bottom: 25px; border-left: 5px solid #3b82f6; padding-left: 15px;">Selected Projects</h2>
+
+        <div class="project-grid">
+
+            <div class="card">
+                <div class="card-tech">SQL • Tableau • R</div>
+                <h3>Optimasi HR Analytics</h3>
+                <p>Menganalisis penyebab tingginya turnover karyawan di Pulse Digital dan merekomendasikan kebijakan baru yang menurunkan rate resign hingga 15%.</p>
+                <a href="#" class="btn-project">Lihat Laporan Lengkap 📄</a>
+            </div>
+
+            <div class="card">
+                <div class="card-tech">SIEM • Firewall • Linux</div>
+                <h3>Audit Keamanan Jaringan</h3>
+                <p>Melakukan Vulnerability Assessment pada server kantor dan menghentikan simulasi serangan brute-force menggunakan tools monitoring SIEM.</p>
+                <a href="#" class="btn-project">Lihat Dokumentasi 🛡️</a>
+            </div>
+
+            <div class="card">
+                <div class="card-tech">Six Sigma • Python</div>
+                <h3>Efisiensi Alur Produksi</h3>
+                <p>Penerapan metodologi DMAIC untuk mengurangi cacat produk. Data diolah menggunakan Python Pandas untuk menemukan bottleneck.</p>
+                <a href="#" class="btn-project">Lihat Analisis 📊</a>
+            </div>
+            
+            </div>
+
+        <footer>
+            <p>© 2026 Alfin Maulana Yudistira. Dibuat dengan HTML & Semangat Belajar.</p>
+        </footer>
 
     </div>
 
