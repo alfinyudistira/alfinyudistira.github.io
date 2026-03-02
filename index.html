@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alfin Maulana Yudistira | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio of Alfin Maulana Yudistira - Digital Transformation & Industrial Safety Consultant based in Gresik. Specializing in Data Science, Cybersecurity, and Six Sigma.">
+    <meta property="og:title" content="Alfin Maulana Yudistira | Enterprise Portfolio">
+    <meta property="og:description" content="Bridging Data Science, Cybersecurity, and Operations. See my enterprise-grade projects here.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/040404/00ffa3?text=AMY.DEV+PORTFOLIO">
+    <meta property="og:url" content="https://alfinyudistira.github.io">
+    <meta name="theme-color" content="#040404">
+
     <style>
         :root {
             --neon: #00ffa3;
@@ -472,6 +479,25 @@
             .edu-item, .exp-item { grid-template-columns: 1fr; gap: 8px; }
             section { padding: 40px 0; }
         }
+                /* TOMBOL BACK TO TOP */
+        .back-to-top {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 45px; height: 45px;
+            background: rgba(0,255,163,0.1);
+            border: 1px solid var(--neon);
+            color: var(--neon);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; font-size: 1.2rem;
+            backdrop-filter: blur(5px);
+            z-index: 999;
+            transition: 0.3s;
+            opacity: 0.8;
+        }
+        .back-to-top:hover {
+            background: var(--neon); color: #000; opacity: 1; transform: translateY(-3px);
+        }
+
     </style>
 </head>
 <body>
@@ -1068,6 +1094,8 @@
         <a href="https://www.linkedin.com/in/alfinmaulanayudistira" target="_blank">LinkedIn</a>
     </p>
 </footer>
+
+    <a href="#hero" class="back-to-top">↑</a>
 
 <script>
     // Scroll reveal logic
